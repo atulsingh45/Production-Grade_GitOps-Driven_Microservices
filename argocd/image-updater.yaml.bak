@@ -1,0 +1,167 @@
+apiVersion: argocd-image-updater.argoproj.io/v1alpha1
+kind: ImageUpdater
+metadata:
+  name: boutique-image-updater
+  namespace: argocd
+spec:
+  namespace: argocd
+  applicationRefs:
+    - namePattern: "boutique-*"
+      commonUpdateSettings:
+        updateStrategy: "newest-build"
+        allowTags: "regexp:^sha-[a-f0-9]{7,40}$"
+      images:
+        - alias: adservice
+          imageName: ghcr.io/atulsingh45/microservices-demo/adservice
+          manifestTargets:
+            helm:
+              name: images.adservice.repository
+              tag: images.adservice.tag
+          manifestTargets:
+            helm:
+              name: images.adservice.repository
+              tag: images.adservice.tag
+          manifestTargets:
+            helm:
+              name: images.adservice.repository
+              tag: images.adservice.tag
+        - alias: cartservice
+          imageName: ghcr.io/atulsingh45/microservices-demo/cartservice
+          manifestTargets:
+            helm:
+              name: images.cartservice.repository
+              tag: images.cartservice.tag
+          manifestTargets:
+            helm:
+              name: images.cartservice.repository
+              tag: images.cartservice.tag
+          manifestTargets:
+            helm:
+              name: images.cartservice.repository
+              tag: images.cartservice.tag
+        - alias: checkoutservice
+          imageName: ghcr.io/atulsingh45/microservices-demo/checkoutservice
+          manifestTargets:
+            helm:
+              name: images.checkoutservice.repository
+              tag: images.checkoutservice.tag
+          manifestTargets:
+            helm:
+              name: images.checkoutservice.repository
+              tag: images.checkoutservice.tag
+          manifestTargets:
+            helm:
+              name: images.checkoutservice.repository
+              tag: images.checkoutservice.tag
+        - alias: currencyservice
+          imageName: ghcr.io/atulsingh45/microservices-demo/currencyservice
+          manifestTargets:
+            helm:
+              name: images.currencyservice.repository
+              tag: images.currencyservice.tag
+          manifestTargets:
+            helm:
+              name: images.currencyservice.repository
+              tag: images.currencyservice.tag
+          manifestTargets:
+            helm:
+              name: images.currencyservice.repository
+              tag: images.currencyservice.tag
+        - alias: emailservice
+          imageName: ghcr.io/atulsingh45/microservices-demo/emailservice
+          manifestTargets:
+            helm:
+              name: images.emailservice.repository
+              tag: images.emailservice.tag
+          manifestTargets:
+            helm:
+              name: images.emailservice.repository
+              tag: images.emailservice.tag
+          manifestTargets:
+            helm:
+              name: images.emailservice.repository
+              tag: images.emailservice.tag
+        - alias: frontend
+          imageName: ghcr.io/atulsingh45/microservices-demo/frontend
+          manifestTargets:
+            helm:
+              name: images.frontend.repository
+              tag: images.frontend.tag
+          manifestTargets:
+            helm:
+              name: images.frontend.repository
+              tag: images.frontend.tag
+          manifestTargets:
+            helm:
+              name: images.frontend.repository
+              tag: images.frontend.tag
+        - alias: paymentservice
+          imageName: ghcr.io/atulsingh45/microservices-demo/paymentservice
+          manifestTargets:
+            helm:
+              name: images.paymentservice.repository
+              tag: images.paymentservice.tag
+          manifestTargets:
+            helm:
+              name: images.paymentservice.repository
+              tag: images.paymentservice.tag
+          manifestTargets:
+            helm:
+              name: images.paymentservice.repository
+              tag: images.paymentservice.tag
+        - alias: productcatalogservice
+          imageName: ghcr.io/atulsingh45/microservices-demo/productcatalogservice
+          manifestTargets:
+            helm:
+              name: images.productcatalogservice.repository
+              tag: images.productcatalogservice.tag
+          manifestTargets:
+            helm:
+              name: images.productcatalogservice.repository
+              tag: images.productcatalogservice.tag
+          manifestTargets:
+            helm:
+              name: images.productcatalogservice.repository
+              tag: images.productcatalogservice.tag
+        - alias: recommendationservice
+          imageName: ghcr.io/atulsingh45/microservices-demo/recommendationservice
+          manifestTargets:
+            helm:
+              name: images.recommendationservice.repository
+              tag: images.recommendationservice.tag
+          manifestTargets:
+            helm:
+              name: images.recommendationservice.repository
+              tag: images.recommendationservice.tag
+          manifestTargets:
+            helm:
+              name: images.recommendationservice.repository
+              tag: images.recommendationservice.tag
+        - alias: shippingservice
+          imageName: ghcr.io/atulsingh45/microservices-demo/shippingservice
+          manifestTargets:
+            helm:
+              name: images.shippingservice.repository
+              tag: images.shippingservice.tag
+          manifestTargets:
+            helm:
+              name: images.shippingservice.repository
+              tag: images.shippingservice.tag
+          manifestTargets:
+            helm:
+              name: images.shippingservice.repository
+              tag: images.shippingservice.tag
+        - alias: loadgenerator
+          imageName: ghcr.io/atulsingh45/microservices-demo/loadgenerator
+          manifestTargets:
+            helm:
+              name: images.loadgenerator.repository
+              tag: images.loadgenerator.tag
+          manifestTargets:
+            helm:
+              name: images.loadgenerator.repository
+              tag: images.loadgenerator.tag
+          manifestTargets:
+            helm:
+              name: images.loadgenerator.repository
+              tag: images.loadgenerator.tag
